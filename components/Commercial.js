@@ -1,24 +1,31 @@
-import React, {Component} from 'react';
+import React, { useState } from 'react';
 import { View, TextInput, Text, StyleSheet } from 'react-native';
 
-class Commercial extends Component {
-  constructor() {
-    super();
-    this.state = {
-      p1score: 0,
-      p2score: 0
-  }
-}
+const Commercial = () => {
+  const [p1Score, setp1Score] = useState(0);
+  const [p2Score, setp2Score] = useState(0);
 
-  render() {
     return (
       <View style={styles.title}>
-        <TextInput keyboardType={'numeric'} style={styles.input}></TextInput>
+        
+        <TextInput
+         keyboardType={'numeric'} 
+         style={styles.input} 
+         onChangeText={(value) => setp1Score(value)}
+         >{p1Score}
+        </TextInput>
+
           <Text style={styles.text}>Commercial</Text>
-        <TextInput keyboardType={'numeric'} style={styles.input}></TextInput>
-    </View>
+
+        <TextInput
+         keyboardType={'numeric'} 
+         style={styles.input} 
+         onChangeText={(value) => setp2Score(value)}
+         >{p2Score}
+        </TextInput>
+
+      </View>
     )
-  }
 }
 
 
@@ -35,7 +42,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#20232a",
     width: 50,
-    padding: 5
+    padding: 5,
+    textAlign: 'center'
   },
   text: {
     fontSize: 20,
