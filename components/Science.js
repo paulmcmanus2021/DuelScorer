@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { View, TextInput, Text, StyleSheet } from 'react-native';
 
 const Science = () => {
-  const [p1Score, setp1Score] = useState(0);
-  const [p2Score, setp2Score] = useState(0);
+  const [p1ScienceScore, setp1ScienceScore] = useState(0);
+  const [p2ScienceScore, setp2ScienceScore] = useState(0);
 
     return (
       <View style={styles.title}>
@@ -11,8 +11,8 @@ const Science = () => {
         <TextInput
          keyboardType={'numeric'} 
          style={styles.input} 
-         onChangeText={(value) => setp1Score(value)}
-         >{p1Score}
+         onChangeText={(value) => setp1ScienceScore(value)}
+         >{p1ScienceScore}
         </TextInput>
 
           <Text style={styles.text}>Science</Text>
@@ -20,8 +20,8 @@ const Science = () => {
         <TextInput
          keyboardType={'numeric'} 
          style={styles.input} 
-         onChangeText={(value) => setp2Score(value)}
-         >{p2Score}
+         onChangeText={(value) => setp2ScienceScore(value)}
+         >{p2ScienceScore}
         </TextInput>
 
       </View>

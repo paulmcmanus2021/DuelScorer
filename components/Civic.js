@@ -2,17 +2,22 @@ import React, { useState } from 'react';
 import { View, TextInput, Text, StyleSheet } from 'react-native';
 
 const Civic = () => {
-  const [p1Score, setp1Score] = useState(0);
-  const [p2Score, setp2Score] = useState(0);
+  const [p1CivicScore, setp1CivicScore] = useState(0);
+  const [p2CivicScore, setp2CivicScore] = useState(0);
+
+  console.log(p1CivicScore);
+  console.log(p2CivicScore);
+  
 
     return (
       <View style={styles.title}>
         
         <TextInput
+         clearTextOnFocus={true}
          keyboardType={'numeric'} 
          style={styles.input} 
-         onChangeText={(value) => setp1Score(value)}
-         >{p1Score}
+         onChangeText={(value) => setp1CivicScore(value)}
+         >{p1CivicScore}
         </TextInput>
 
           <Text style={styles.text}>Civic</Text>
@@ -20,8 +25,8 @@ const Civic = () => {
         <TextInput
          keyboardType={'numeric'} 
          style={styles.input} 
-         onChangeText={(value) => setp2Score(value)}
-         >{p2Score}
+         onChangeText={(value) => setp2CivicScore(value)}
+         >{p2CivicScore}
         </TextInput>
 
       </View>

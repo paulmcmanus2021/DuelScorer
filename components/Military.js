@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { View, TextInput, Text, StyleSheet } from 'react-native';
 
 const Military = () => {
-  const [p1Score, setp1Score] = useState(0);
-  const [p2Score, setp2Score] = useState(0);
+  const [p1MilitaryScore, setp1MilitaryScore] = useState(0);
+  const [p2MilitaryScore, setp2MilitaryScore] = useState(0);
 
     return (
       <View style={styles.title}>
@@ -11,8 +11,8 @@ const Military = () => {
         <TextInput
          keyboardType={'numeric'} 
          style={styles.input} 
-         onChangeText={(value) => setp1Score(value)}
-         >{p1Score}
+         onChangeText={(value) => setp1MilitaryScore(value)}
+         >{p1MilitaryScore}
         </TextInput>
 
           <Text style={styles.text}>Military</Text>
@@ -20,8 +20,8 @@ const Military = () => {
         <TextInput
          keyboardType={'numeric'} 
          style={styles.input} 
-         onChangeText={(value) => setp2Score(value)}
-         >{p2Score}
+         onChangeText={(value) => setp2MilitaryScore(value)}
+         >{p2MilitaryScore}
         </TextInput>
 
       </View>

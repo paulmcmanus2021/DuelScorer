@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { View, TextInput, Text, StyleSheet } from 'react-native';
 
 const Guilds = () => {
-  const [p1Score, setp1Score] = useState(0);
-  const [p2Score, setp2Score] = useState(0);
+  const [p1GuildScore, setp1GuildScore] = useState(0);
+  const [p2GuildScore, setp2GuildScore] = useState(0);
 
     return (
       <View style={styles.title}>
@@ -11,8 +11,8 @@ const Guilds = () => {
         <TextInput
          keyboardType={'numeric'} 
          style={styles.input} 
-         onChangeText={(value) => setp1Score(value)}
-         >{p1Score}
+         onChangeText={(value) => setp1GuildScore(value)}
+         >{p1GuildScore}
         </TextInput>
 
           <Text style={styles.text}>Guilds</Text>
@@ -20,8 +20,8 @@ const Guilds = () => {
         <TextInput
          keyboardType={'numeric'} 
          style={styles.input} 
-         onChangeText={(value) => setp2Score(value)}
-         >{p2Score}
+         onChangeText={(value) => setp2GuildScore(value)}
+         >{p2GuildScore}
         </TextInput>
 
       </View>

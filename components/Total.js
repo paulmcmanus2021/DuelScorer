@@ -1,28 +1,22 @@
 import React, { useState } from 'react';
-import { View, TextInput, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 const Total = () => {
-  const [p1Score, setp1Score] = useState(0);
-  const [p2Score, setp2Score] = useState(0);
+  const [p1Total, setp1Total] = useState(0);
+  const [p2Total, setp2Total] = useState(0);
 
     return (
       <View style={styles.title}>
         
-        <TextInput
-         keyboardType={'numeric'} 
-         style={styles.input} 
-         onChangeText={(value) => setp1Score(value)}
-         >{p1Score}
-        </TextInput>
+        <Text style={styles.input}>
+          {p1Total}
+        </Text>
 
           <Text style={styles.text}>Total</Text>
 
-        <TextInput
-         keyboardType={'numeric'} 
-         style={styles.input} 
-         onChangeText={(value) => setp2Score(value)}
-         >{p2Score}
-        </TextInput>
+        <Text style={styles.input}>
+          {p2Total}
+        </Text>
 
       </View>
     )

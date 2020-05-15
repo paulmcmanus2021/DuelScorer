@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { View, TextInput, Text, StyleSheet } from 'react-native';
 
 const Wonders = () => {
-  const [p1Score, setp1Score] = useState(0);
-  const [p2Score, setp2Score] = useState(0);
+  const [p1WonderScore, setp1WonderScore] = useState(0);
+  const [p2WonderScore, setp2WonderScore] = useState(0);
 
     return (
       <View style={styles.title}>
@@ -11,8 +11,8 @@ const Wonders = () => {
         <TextInput
          keyboardType={'numeric'} 
          style={styles.input} 
-         onChangeText={(value) => setp1Score(value)}
-         >{p1Score}
+         onChangeText={(value) => setp1WonderScore(value)}
+         >{p1WonderScore}
         </TextInput>
 
           <Text style={styles.text}>Wonders Built</Text>
@@ -20,8 +20,8 @@ const Wonders = () => {
         <TextInput
          keyboardType={'numeric'} 
          style={styles.input} 
-         onChangeText={(value) => setp2Score(value)}
-         >{p2Score}
+         onChangeText={(value) => setp2WonderScore(value)}
+         >{p2WonderScore}
         </TextInput>
 
       </View>

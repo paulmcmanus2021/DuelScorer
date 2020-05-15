@@ -4,6 +4,7 @@ import { View, TextInput, Text, StyleSheet } from 'react-native';
 const PlayerNames = () => {
   const [p1Name, setp1Name] = useState("");
   const [p2Name, setp2Name] = useState("");
+    
 
     return (
       <View style={styles.title}>

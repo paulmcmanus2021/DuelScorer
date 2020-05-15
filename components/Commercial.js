@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { View, TextInput, Text, StyleSheet } from 'react-native';
 
 const Commercial = () => {
-  const [p1Score, setp1Score] = useState(0);
-  const [p2Score, setp2Score] = useState(0);
+  const [p1CommercialScore, setp1CommercialScore] = useState(0);
+  const [p2CommercialScore, setp2CommercialScore] = useState(0);
 
     return (
       <View style={styles.title}>
@@ -11,8 +11,8 @@ const Commercial = () => {
         <TextInput
          keyboardType={'numeric'} 
          style={styles.input} 
-         onChangeText={(value) => setp1Score(value)}
-         >{p1Score}
+         onChangeText={(value) => setp1CommercialScore(value)}
+         >{p1CommercialScore}
         </TextInput>
 
           <Text style={styles.text}>Commercial</Text>
@@ -20,8 +20,8 @@ const Commercial = () => {
         <TextInput
          keyboardType={'numeric'} 
          style={styles.input} 
-         onChangeText={(value) => setp2Score(value)}
-         >{p2Score}
+         onChangeText={(value) => setp2CommercialScore(value)}
+         >{p2CommercialScore}
         </TextInput>
 
       </View>

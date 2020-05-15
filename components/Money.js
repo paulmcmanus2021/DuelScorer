@@ -15,7 +15,7 @@ const Money = () => {
          >{p1Score}
         </TextInput>
 
-          <Text style={styles.text}>Money</Text>
+          <Text style={styles.text}>Money (3/1)</Text>
 
         <TextInput
          keyboardType={'numeric'} 
