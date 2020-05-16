@@ -1,31 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, TextInput, Text, StyleSheet } from 'react-native';
 
-const Science = () => {
-  const [p1ScienceScore, setp1ScienceScore] = useState(0);
-  const [p2ScienceScore, setp2ScienceScore] = useState(0);
+const Science = (props) => {
+  
+  return (
+    <View style={styles.title}>
+      
+      <TextInput
+        keyboardType={'numeric'} 
+        style={styles.input} 
+        >
+        {props.p1ScienceScore}
+      </TextInput>
 
-    return (
-      <View style={styles.title}>
-        
-        <TextInput
-         keyboardType={'numeric'} 
-         style={styles.input} 
-         onChangeText={(value) => setp1ScienceScore(value)}
-         >{p1ScienceScore}
-        </TextInput>
+      <Text style={styles.text}>Science</Text>
 
-          <Text style={styles.text}>Science</Text>
+      <TextInput
+        keyboardType={'numeric'} 
+        style={styles.input} 
+        >
+        {props.p2ScienceScore}
+      </TextInput>
 
-        <TextInput
-         keyboardType={'numeric'} 
-         style={styles.input} 
-         onChangeText={(value) => setp2ScienceScore(value)}
-         >{p2ScienceScore}
-        </TextInput>
-
-      </View>
-    )
+    </View>
+  )
 }
 
 

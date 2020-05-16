@@ -1,31 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, TextInput, Text, StyleSheet } from 'react-native';
 
-const Military = () => {
-  const [p1MilitaryScore, setp1MilitaryScore] = useState(0);
-  const [p2MilitaryScore, setp2MilitaryScore] = useState(0);
+const Military = (props) => {
+  
+  return (
+    <View style={styles.title}>
+      
+      <TextInput
+        keyboardType={'numeric'} 
+        style={styles.input} 
+        >
+        {props.p1MilitaryScore}
+      </TextInput>
 
-    return (
-      <View style={styles.title}>
-        
-        <TextInput
-         keyboardType={'numeric'} 
-         style={styles.input} 
-         onChangeText={(value) => setp1MilitaryScore(value)}
-         >{p1MilitaryScore}
-        </TextInput>
+      <Text style={styles.text}>Military</Text>
 
-          <Text style={styles.text}>Military</Text>
+      <TextInput
+        keyboardType={'numeric'} 
+        style={styles.input} 
+        >
+        {props.p2MilitaryScore}
+      </TextInput>
 
-        <TextInput
-         keyboardType={'numeric'} 
-         style={styles.input} 
-         onChangeText={(value) => setp2MilitaryScore(value)}
-         >{p2MilitaryScore}
-        </TextInput>
-
-      </View>
-    )
+    </View>
+  )
 }
 
 

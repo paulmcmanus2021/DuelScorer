@@ -1,31 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, TextInput, Text, StyleSheet } from 'react-native';
 
-const ProgressTokens = () => {
-  const [p1ProgressTokenScore, setp1ProgressTokenScore] = useState(0);
-  const [p2ProgressTokenScore, setp2ProgressTokenScore] = useState(0);
+const ProgressTokens = (props) => {
+  
+  return (
+    <View style={styles.title}>
+      
+      <TextInput
+        keyboardType={'numeric'} 
+        style={styles.input} 
+        >
+        {props.p1ProgressScore}
+      </TextInput>
 
-    return (
-      <View style={styles.title}>
-        
-        <TextInput
-         keyboardType={'numeric'} 
-         style={styles.input} 
-         onChangeText={(value) => setp1ProgressTokenScore(value)}
-         >{p1ProgressTokenScore}
-        </TextInput>
+      <Text style={styles.text}>Progress Tokens</Text>
 
-          <Text style={styles.text}>Progress Tokens</Text>
+      <TextInput
+        keyboardType={'numeric'} 
+        style={styles.input} 
+        >
+        {props.p2ProgressScore}
+      </TextInput>
 
-        <TextInput
-         keyboardType={'numeric'} 
-         style={styles.input} 
-         onChangeText={(value) => setp2ProgressTokenScore(value)}
-         >{p2ProgressTokenScore}
-        </TextInput>
-
-      </View>
-    )
+    </View>
+  )
 }
 
 

@@ -1,31 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, TextInput, Text, StyleSheet } from 'react-native';
 
-const Guilds = () => {
-  const [p1GuildScore, setp1GuildScore] = useState(0);
-  const [p2GuildScore, setp2GuildScore] = useState(0);
+const Guilds = (props) => {
+  
+  return (
+    <View style={styles.title}>
+      
+      <TextInput
+        keyboardType={'numeric'} 
+        style={styles.input} 
+        >
+        {props.p1GuildsScore}
+      </TextInput>
 
-    return (
-      <View style={styles.title}>
-        
-        <TextInput
-         keyboardType={'numeric'} 
-         style={styles.input} 
-         onChangeText={(value) => setp1GuildScore(value)}
-         >{p1GuildScore}
-        </TextInput>
+      <Text style={styles.text}>Guilds</Text>
 
-          <Text style={styles.text}>Guilds</Text>
+      <TextInput
+        keyboardType={'numeric'} 
+        style={styles.input} 
+        >
+        {props.p2GuildsScore}
+      </TextInput>
 
-        <TextInput
-         keyboardType={'numeric'} 
-         style={styles.input} 
-         onChangeText={(value) => setp2GuildScore(value)}
-         >{p2GuildScore}
-        </TextInput>
-
-      </View>
-    )
+    </View>
+  )
 }
 
 

@@ -1,25 +1,49 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const Total = () => {
-  const [p1Total, setp1Total] = useState(0);
-  const [p2Total, setp2Total] = useState(0);
+const Total = (props) => {
 
-    return (
-      <View style={styles.title}>
-        
-        <Text style={styles.input}>
-          {p1Total}
-        </Text>
+  const p1Total = (
+    props.p1CivicScore 
+  + props.p1ScienceScore
+  + props.p1CommercialScore
+  + props.p1GuildsScore
+  + props.p1WondersScore
+  + props.p1ProgressScore
+  + props.p1MoneyScore
+  + props.p1MilitaryScore) 
 
-          <Text style={styles.text}>Total</Text>
+  const p2Total = (
+    props.p2CivicScore 
+  + props.p2ScienceScore
+  + props.p2CommercialScore
+  + props.p2GuildsScore
+  + props.p2WondersScore
+  + props.p2ProgressScore
+  + props.p2MoneyScore
+  + props.p2MilitaryScore)
 
-        <Text style={styles.input}>
-          {p2Total}
-        </Text>
+  return (
+    <View style={styles.title}>
+      
+      <Text
+        keyboardType={'numeric'} 
+        style={styles.input} 
+        >
+        {p1Total}
+      </Text>
 
-      </View>
-    )
+      <Text style={styles.text}>Total</Text>
+
+      <Text
+        keyboardType={'numeric'} 
+        style={styles.input} 
+        >
+        {p2Total}
+      </Text>
+
+    </View>
+  )
 }
 
 

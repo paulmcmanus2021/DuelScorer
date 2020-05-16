@@ -1,32 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, TextInput, Text, StyleSheet } from 'react-native';
 
-const Civic = () => {
-  const [p1CivicScore, setp1CivicScore] = useState(0);
-  const [p2CivicScore, setp2CivicScore] = useState(0);
+const Civic = (props) => {
 
-  console.log(p1CivicScore);
-  console.log(p2CivicScore);
   
-
+  
     return (
       <View style={styles.title}>
         
         <TextInput
-         clearTextOnFocus={true}
-         keyboardType={'numeric'} 
-         style={styles.input} 
-         onChangeText={(value) => setp1CivicScore(value)}
-         >{p1CivicScore}
+          keyboardType={'numeric'} 
+          style={styles.input} 
+          >
+          {props.p1CivicScore}
         </TextInput>
 
-          <Text style={styles.text}>Civic</Text>
+        <Text style={styles.text}>Civic</Text>
 
         <TextInput
-         keyboardType={'numeric'} 
-         style={styles.input} 
-         onChangeText={(value) => setp2CivicScore(value)}
-         >{p2CivicScore}
+          keyboardType={'numeric'} 
+          style={styles.input} 
+          >
+          {props.p2CivicScore}
         </TextInput>
 
       </View>

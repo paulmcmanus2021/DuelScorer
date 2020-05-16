@@ -1,31 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, TextInput, Text, StyleSheet } from 'react-native';
 
-const Money = () => {
-  const [p1Score, setp1Score] = useState(0);
-  const [p2Score, setp2Score] = useState(0);
+const Money = (props) => {
+  
+  return (
+    <View style={styles.title}>
+      
+      <TextInput
+        keyboardType={'numeric'} 
+        style={styles.input} 
+        >
+        {props.p1MoneyScore}
+      </TextInput>
 
-    return (
-      <View style={styles.title}>
-        
-        <TextInput
-         keyboardType={'numeric'} 
-         style={styles.input} 
-         onChangeText={(value) => setp1Score(value)}
-         >{p1Score}
-        </TextInput>
+      <Text style={styles.text}>Money</Text>
 
-          <Text style={styles.text}>Money (3/1)</Text>
+      <TextInput
+        keyboardType={'numeric'} 
+        style={styles.input} 
+        >
+        {props.p2MoneyScore}
+      </TextInput>
 
-        <TextInput
-         keyboardType={'numeric'} 
-         style={styles.input} 
-         onChangeText={(value) => setp2Score(value)}
-         >{p2Score}
-        </TextInput>
-
-      </View>
-    )
+    </View>
+  )
 }
 
 

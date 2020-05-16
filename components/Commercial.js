@@ -1,31 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, TextInput, Text, StyleSheet } from 'react-native';
 
-const Commercial = () => {
-  const [p1CommercialScore, setp1CommercialScore] = useState(0);
-  const [p2CommercialScore, setp2CommercialScore] = useState(0);
+const Commercial = (props) => {
+  
+  return (
+    <View style={styles.title}>
+      
+      <TextInput
+        keyboardType={'numeric'} 
+        style={styles.input} 
+        >
+        {props.p1CommercialScore}
+      </TextInput>
 
-    return (
-      <View style={styles.title}>
-        
-        <TextInput
-         keyboardType={'numeric'} 
-         style={styles.input} 
-         onChangeText={(value) => setp1CommercialScore(value)}
-         >{p1CommercialScore}
-        </TextInput>
+      <Text style={styles.text}>Commercial</Text>
 
-          <Text style={styles.text}>Commercial</Text>
+      <TextInput
+        keyboardType={'numeric'} 
+        style={styles.input} 
+        >
+        {props.p2CommercialScore}
+      </TextInput>
 
-        <TextInput
-         keyboardType={'numeric'} 
-         style={styles.input} 
-         onChangeText={(value) => setp2CommercialScore(value)}
-         >{p2CommercialScore}
-        </TextInput>
-
-      </View>
-    )
+    </View>
+  )
 }
 
 

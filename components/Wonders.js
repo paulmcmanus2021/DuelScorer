@@ -1,31 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, TextInput, Text, StyleSheet } from 'react-native';
 
-const Wonders = () => {
-  const [p1WonderScore, setp1WonderScore] = useState(0);
-  const [p2WonderScore, setp2WonderScore] = useState(0);
+const Wonders = (props) => {
+  
+  return (
+    <View style={styles.title}>
+      
+      <TextInput
+        keyboardType={'numeric'} 
+        style={styles.input} 
+        >
+        {props.p1WondersScore}
+      </TextInput>
 
-    return (
-      <View style={styles.title}>
-        
-        <TextInput
-         keyboardType={'numeric'} 
-         style={styles.input} 
-         onChangeText={(value) => setp1WonderScore(value)}
-         >{p1WonderScore}
-        </TextInput>
+      <Text style={styles.text}>Wonders Built</Text>
 
-          <Text style={styles.text}>Wonders Built</Text>
+      <TextInput
+        keyboardType={'numeric'} 
+        style={styles.input} 
+        >
+        {props.p2WondersScore}
+      </TextInput>
 
-        <TextInput
-         keyboardType={'numeric'} 
-         style={styles.input} 
-         onChangeText={(value) => setp2WonderScore(value)}
-         >{p2WonderScore}
-        </TextInput>
-
-      </View>
-    )
+    </View>
+  )
 }
 
 
