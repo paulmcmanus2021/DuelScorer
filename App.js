@@ -33,15 +33,36 @@ class App extends Component {
       p2ProgressScore: 0,
       p2MoneyScore: 0,
       p2MilitaryScore: 0,
-    };   
+    }; 
+    this.updatep1CivicScore = this.updatep1CivicScore.bind(this);
+    this.updatep2CivicScore = this.updatep2CivicScore.bind(this);
   }
+
+  updatep1CivicScore(newScore) {
+    this.setState({
+      p1CivicScore: newScore
+    });
+  }
+
+  updatep2CivicScore(newScore) {
+    this.setState({
+      p2CivicScore: newScore
+    });
+  }
+
+
+
+
 
   render() {
     return (
       <View>
         <Header />
         <PlayerNames/>
-        <Civic p1CivicScore={this.state.p1CivicScore} p2CivicScore={this.state.p2CivicScore}/>
+        <Civic 
+          p1CivicScore={this.state.p1CivicScore} updatep1CivicScore={this.updatep1CivicScore}
+          p2CivicScore={this.state.p2CivicScore} updatep2CivicScore={this.updatep2CivicScore}
+        />
         <Science p1ScienceScore={this.state.p1ScienceScore} p2ScienceScore={this.state.p2ScienceScore}/>
         <Commercial p1CommercialScore={this.state.p1CommercialScore} p2CommercialScore={this.state.p2CommercialScore}/>
         <Guilds p1GuildsScore={this.state.p1GuildsScore} p2GuildsScore={this.state.p2GuildsScore}/>
@@ -49,6 +70,7 @@ class App extends Component {
         <ProgressTokens p1ProgressScore={this.state.p1ProgressScore} p2ProgressScore={this.state.p2ProgressScore}/>
         <Money p1MoneyScore={this.state.p1MoneyScore} p2MoneyScore={this.state.p2MoneyScore}/>
         <Military p1MilitaryScore={this.state.p1MilitaryScore} p2MilitaryScore={this.state.p2MilitaryScore}/>
+
         <Total 
           p1CivicScore={this.state.p1CivicScore} p2CivicScore={this.state.p2CivicScore}
           p1ScienceScore={this.state.p1ScienceScore} p2ScienceScore={this.state.p2ScienceScore}

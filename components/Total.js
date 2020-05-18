@@ -26,8 +26,7 @@ const Total = (props) => {
   return (
     <View style={styles.title}>
       
-      <Text
-        keyboardType={'numeric'} 
+      <Text 
         style={styles.input} 
         >
         {p1Total}
@@ -36,7 +35,6 @@ const Total = (props) => {
       <Text style={styles.text}>Total</Text>
 
       <Text
-        keyboardType={'numeric'} 
         style={styles.input} 
         >
         {p2Total}
