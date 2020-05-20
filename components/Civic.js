@@ -1,26 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, TextInput, Text, StyleSheet } from 'react-native';
 
 const Civic = (props) => {
 
-  const [p1localCivicScore, setp1localCivicScore] = useState(props.p1CivicScore);
-  const [p2localCivicScore, setp2localCivicScore] = useState(props.p2CivicScore);
-
-    // console.log("Local p1 Civic score is " + p1localCivicScore);
-    // console.log("State/props p1 Civic score is " + props.p1CivicScore);
-    // console.log("Local p2 Civic score is " + p2localCivicScore);
-    // console.log("State/props p2 Civic score is " + props.p2CivicScore);
+    console.log("Local p1 Civic score is " + props.p1CivicScore);
+    console.log("State/props p1 Civic score is " + props.p1CivicScore);
+    console.log("Local p2 Civic score is " + props.p2CivicScore);
+    console.log("State/props p2 Civic score is " + props.p2CivicScore);
+    
 
 
+    
     return (
       <View style={styles.title}>
         
         <TextInput
           keyboardType={'numeric'} 
           style={styles.input} 
-          onChangeText={(value) => setp1localCivicScore(value)}
           >
-          {p1localCivicScore}
+          {props.p1CivicScore}
         </TextInput>
 
         <Text style={styles.text}>Civic</Text>
@@ -28,9 +26,8 @@ const Civic = (props) => {
         <TextInput
           keyboardType={'numeric'} 
           style={styles.input} 
-          onChangeText={(value) => setp2localCivicScore(value)}
           >
-          {p2localCivicScore}
+          {props.p2CivicScore}
         </TextInput>
 
       </View>
