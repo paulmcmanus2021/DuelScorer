@@ -48,7 +48,7 @@ class App extends Component {
         </View>
 
         <View style={[styles.foreground, {"right": 30}]}>
-          {/* <Player /> */}
+          <Player />
         </View>
       
       </View>

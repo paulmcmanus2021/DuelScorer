@@ -11,17 +11,19 @@ const Player = (props) => {
         wonders: 0, 
         tokens: 0,
         money: 0,
-        military: 0,
-        total: 0
+        military: 0
     })
 
-    const runningTotal = values.civic.value + values.science.value
-    
-    console.log(values.name);
-    console.log(values.civic);
-    console.log(values.science);
-    console.log(values.total);
-    console.log(runningTotal);
+    const runningTotal = (
+          parseInt(values.civic)
+        + parseInt(values.science)
+        + parseInt(values.commercial)
+        + parseInt(values.guilds)
+        + parseInt(values.wonders)
+        + parseInt(values.tokens)
+        + parseInt(values.money)
+        + parseInt(values.military)
+    )
     
     
     return(
@@ -29,16 +31,16 @@ const Player = (props) => {
             <View style={styles.form} >
                 <TextInput onChangeText={(value) => update({...values,name: value})} style={[styles.input, {"width": 80}]}>{values.name}</TextInput>
 
-                    <TextInput onChangeText={(value) => update({...values,civic: value})} style={styles.input} keyboardType={'numeric'}>{values.civic}</TextInput>
-                    <TextInput onChangeText={(value) => update({...values,science: value})} style={styles.input} keyboardType={'numeric'}>{values.science}</TextInput>
-                    <TextInput onChangeText={(value) => update({...values,commercial: value})} style={styles.input} keyboardType={'numeric'}>{values.commercial}</TextInput>
-                    <TextInput onChangeText={(value) => update({...values,guilds: value})} style={styles.input} keyboardType={'numeric'}>{values.guilds}</TextInput>
-                    <TextInput onChangeText={(value) => update({...values,wonders: value})} style={styles.input} keyboardType={'numeric'}>{values.wonders}</TextInput>
-                    <TextInput onChangeText={(value) => update({...values,tokens: value})} style={styles.input} keyboardType={'numeric'}>{values.tokens}</TextInput>
-                    <TextInput onChangeText={(value) => update({...values,money: value})} style={styles.input} keyboardType={'numeric'}>{values.money}</TextInput>
-                    <TextInput onChangeText={(value) => update({...values,military: value})} style={styles.input} keyboardType={'numeric'}>{values.military}</TextInput>
+                    <TextInput onChangeText={(value) => update({...values,civic: value})} style={styles.input} keyboardType={'numeric'} selectTextOnFocus={true}>{values.civic}</TextInput>
+                    <TextInput onChangeText={(value) => update({...values,science: value})} style={styles.input} keyboardType={'numeric'} selectTextOnFocus={true}>{values.science}</TextInput>
+                    <TextInput onChangeText={(value) => update({...values,commercial: value})} style={styles.input} keyboardType={'numeric'} selectTextOnFocus={true}>{values.commercial}</TextInput>
+                    <TextInput onChangeText={(value) => update({...values,guilds: value})} style={styles.input} keyboardType={'numeric'} selectTextOnFocus={true}>{values.guilds}</TextInput>
+                    <TextInput onChangeText={(value) => update({...values,wonders: value})} style={styles.input} keyboardType={'numeric'} selectTextOnFocus={true}>{values.wonders}</TextInput>
+                    <TextInput onChangeText={(value) => update({...values,tokens: value})} style={styles.input} keyboardType={'numeric'} selectTextOnFocus={true}>{values.tokens}</TextInput>
+                    <TextInput onChangeText={(value) => update({...values,money: value})} style={styles.input} keyboardType={'numeric'} selectTextOnFocus={true}>{values.money}</TextInput>
+                    <TextInput onChangeText={(value) => update({...values,military: value})} style={styles.input} keyboardType={'numeric'} selectTextOnFocus={true}>{values.military}</TextInput>
 
-                <Text style={[styles.input, {"textAlignVertical": 'center'}]}>{values.total}</Text>
+                <Text style={[styles.input, {"textAlignVertical": 'center'}]}>{runningTotal}</Text>
             </View>
         </View>
     )
