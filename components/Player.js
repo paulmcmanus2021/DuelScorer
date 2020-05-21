@@ -25,7 +25,6 @@ const Player = (props) => {
         + parseInt(values.military)
     )
     
-    
     return(
         <View style={styles.container}>
             <View style={styles.form} >
