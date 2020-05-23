@@ -11,18 +11,17 @@ const Header = () => {
 
 const styles = StyleSheet.create({
     header: {
-      height: 60,
-      padding: 15,
+      flex: 1,
       backgroundColor: '#77788C',
       borderBottomWidth: 1,
-      borderTopWidth: 2,
+      borderTopWidth: 1,
       borderColor: "#20232a",
-      
+      justifyContent: 'center'
     },
     text: {
         color: '#fff',
         fontSize: 23,
-        textAlign: 'center',
+        textAlign: 'center'
     }
   });
 

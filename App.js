@@ -1,72 +1,100 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
-import Background from './components/Background';
-import Player from './components/Player';
+import { View } from 'react-native';
+import Header from './components/Header';
+import Players from './components/Players'
+import Category from './components/Category';
+import Total from './components/Total';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      scores: {
+        Civic: {
+          title: "Civic",
+          p1: 0,
+          p2: 0,
+        },
+        Science: {
+          title: "Science",
+          p1: 0,
+          p2: 0,
+        },
+        Commercial: {
+          title: "Commercial",
+          p1: 0,
+          p2: 0,
+        },
+        GuildsTemples: {
+          title: "Guilds/Temples",
+          p1: 0,
+          p2: 0,
+        },
+        Divinity: {
+          title: "Divinity",
+          p1: 0,
+          p2: 0,
+        },
+        Wonders: {
+          title: "Built Wonders",
+          p1: 0,
+          p2: 0,
+        },
+        ProgressTokens: {
+          title: "Progress Tokens",
+          p1: 0,
+          p2: 0,
+        },
+        Money: {
+          title: "Money",
+          p1: 0,
+          p2: 0,
+        },
+        Military: {
+          title: "Military",
+          p1: 0,
+          p2: 0,
+        },
+      },
+    };
+    this.updateScore = this.updateScore.bind(this);
+  }
 
-  categoriesArray =[
-    {name: "Name",
-    backgroundColor: '#efdfbb',
-    },
-    {name: "Civic",
-    backgroundColor: '#0273A9',
-    },
-    {name: "Science",
-    backgroundColor: '#0F6A1F',
-    },
-    {name: "Commercial",
-    backgroundColor: '#F3A624',
-    },
-    {name: "Guilds",
-    backgroundColor: '#5C296B',
-    },
-    {name: "Built Wonders",
-    backgroundColor: '#AF890E',
-    },
-    {name: "Progress Tokens",
-    backgroundColor: '#E1DEAD',
-    },
-    {name: "Money (3/1)",
-    backgroundColor: '#EBD364',
-    },
-    {name: "Military",
-    backgroundColor: '#C21924',
-    },
-    {name: "Total",
-    backgroundColor: 'darkslategrey'}
-  ]
+  updateScore(newScore, category, player) {
+    this.setState((prevState) => ({
+      scores: {
+        ...prevState.scores,
+        [category]: {
+          ...prevState.scores[category],
+          [player]: newScore,
+        },
+      },
+    }));
+  }
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={{flex: 1}}>
+        <Header style={{lex: 1}}/>
+        <Players />
 
-        <Background categoriesArray={this.categoriesArray} /> 
+        <Category name="Civic" backgroundColor='#0273A9' scores={this.state.scores.Civic} updateScore={this.updateScore} />
+        <Category name="Science" backgroundColor='#0F6A1F' scores={this.state.scores.Science} updateScore={this.updateScore} />
+        <Category name="Commercial" backgroundColor='#F3A624' scores={this.state.scores.Commercial} updateScore={this.updateScore} />
+        <Category name="GuildsTemples" backgroundColor='#5C296B' scores={this.state.scores.GuildsTemples} updateScore={this.updateScore} />
+        <Category name="Divinity" backgroundColor='#E6E7E9' scores={this.state.scores.Divinity} updateScore={this.updateScore} />
+        <Category name="Wonders" backgroundColor='#AF890E' scores={this.state.scores.Wonders} updateScore={this.updateScore} />
+        <Category name="ProgressTokens" backgroundColor='#E1DEAD' scores={this.state.scores.ProgressTokens} updateScore={this.updateScore} />
+        <Category name="Money" backgroundColor='#CCCEC2' scores={this.state.scores.Money} updateScore={this.updateScore} />
+        <Category name="Military" backgroundColor='#C21924' scores={this.state.scores.Military} updateScore={this.updateScore} />
 
-        <View style={[styles.foreground, {"left": 30}]}>
-          <Player />
-        </View>
-
-        <View style={[styles.foreground, {"right": 30}]}>
-          <Player />
-        </View>
-      
+        <Total scores={this.state.scores} />  
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex:1
-  },
-  
-  foreground:{
-    position: 'absolute'
-  }
- 
- 
-});
+
 
 
 export default App;
